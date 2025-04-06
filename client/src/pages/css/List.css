@@ -1,0 +1,146 @@
+.list-container {
+    position: relative;
+    padding: 20px;
+}
+
+.back-icon {
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.back-button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.back-button:hover {
+    color: #a463ff;
+}
+
+.carousel-item-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 350px;
+}
+
+/* Effet de carte retournable */
+.flip-card {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    height: 250px;
+    perspective: 1000px; /* Effet de profondeur */
+    cursor: pointer;
+}
+
+.flip-card div {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; /* Cache la face arrière par défaut */
+    transition: transform 0.6s ease-in-out;
+}
+
+/* Face avant */
+.flip-card-front {
+    transform: rotateY(0deg);
+}
+
+/* Face arrière */
+.flip-card-back {
+    transform: rotateY(180deg);
+}
+
+/* Effet de retournement au clic */
+.flipped .flip-card-front {
+    transform: rotateY(180deg);
+}
+
+.flipped .flip-card-back {
+    transform: rotateY(0deg);
+}
+
+/* Styles des cartes */
+.custom-card {
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Carte arrière (définition) */
+.custom-card.back {
+    background-color: #f8f9fa; /* Légèrement gris */
+}
+
+.custom-card {
+    height: 250px;
+    width: 100%;
+    max-width: 500px;
+    background-color: white;
+    border-radius: 15px;
+    margin: 0 auto;
+}
+
+.term-text {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Texte de la définition */
+.definition-text {
+    font-size: 18px;
+    font-style: italic;
+    color: #555;
+    text-align: center;
+    padding: 20px;
+}
+
+.button-group{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cards-button{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    text-align: left;
+    padding-left: 25px;
+    font-size: 30px;
+    background: #a463ff;
+    border: none;
+    border-radius: 10px;
+    height: 50px;
+    width: 400px;
+}
+
+@media screen and (max-width: 600px) {
+    .cards-button {
+        width: 90%;
+        font-size: 20px;
+        padding-left: 15px;
+    }
+}
+
+

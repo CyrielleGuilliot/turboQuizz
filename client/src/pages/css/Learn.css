@@ -1,0 +1,136 @@
+.learn-container {
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.exit-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.progress-bar {
+    width: 80%;
+    margin-bottom: 20px;
+}
+
+.term {
+    font-size: 24px;
+    margin: 20px 0;
+}
+
+.options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.option-button:hover {
+    background-color: #9c5fff;
+}
+
+.option-button {
+    background-color: #b266ff;
+    border: none;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 18px;
+    color: white;
+    cursor: pointer;
+    width: 250px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.option-button.correct {
+    background-color: #4caf50;
+}
+
+.option-button.incorrect {
+    background-color: #ff4d4d;
+}
+
+.option-button i {
+    margin-left: 10px;
+    font-size: 20px;
+}
+
+.option-button:disabled {
+    cursor: not-allowed;
+}
+
+.options-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.input-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border: 2px solid white;
+    border-radius: 10px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.input-container input {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    width: 300px; /* Valeur par défaut */
+}
+
+/* Responsive pour mobile */
+@media (max-width: 600px) {
+    .input-container input {
+        width: 90%;
+    }
+}
+
+.input-container input {
+    flex: 1;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 18px;
+    outline: none;
+    padding: 10px;
+}
+
+.input-container button {
+    background: none;
+    border: none;
+    color: #b266ff;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.correct-text {
+    color: #4caf50;
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+.incorrect-text {
+    color: #ff4d4d;
+    font-size: 18px;
+    margin-top: 10px;
+}

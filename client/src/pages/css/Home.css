@@ -1,0 +1,171 @@
+.lists-container {
+    padding: 20px;
+    color: white;
+}
+
+.titleHome {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.add-button {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    display: flex;
+    align-items: center;
+    background: #a463ff;
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    font-size: 18px;
+    border-radius: 10px;
+    gap: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content {
+    background: #222;
+    padding: 20px;
+    border-radius: 10px;
+    width: 350px;
+    text-align: center;
+    color: white;
+    max-height: 80vh;  /* Empêche le dépassement */
+    overflow-y: auto;   /* Ajoute une barre de défilement si nécessaire */
+    min-height: 300px;  /* Assure une bonne apparence avec peu d'éléments */
+}
+
+/* Personnalisation de la barre de défilement */
+.popup-content::-webkit-scrollbar {
+    width: 6px;
+}
+
+.popup-content::-webkit-scrollbar-thumb {
+    background: #a463ff;
+    border-radius: 10px;
+}
+
+
+input {
+    width: 90%;
+    padding: 10px;
+    margin: 5px 0;
+    border: none;
+    border-bottom: 2px solid white;
+    background: transparent;
+    color: white;
+    font-size: 16px;
+}
+
+.word-card {
+    background: #a463ff;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 10px 0;
+}
+
+.add-word-button {
+    background: #a463ff;
+    border: none;
+    color: white;
+    font-size: 24px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    margin: 10px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    line-height: 1;
+}
+
+.popup-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+/* Bouton Save (vert) */
+.save-button {
+    background: #28a745;
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: 0.3s;
+}
+
+.cancel-button {
+    background: #dc3545;
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: 0.3s;
+}
+
+.lists-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: left;
+    margin-top: 35px;
+}
+
+.list-card {
+    background: #a463ff;
+    padding: 15px;
+    border-radius: 12px;
+    width: 200px;
+    text-align: left;
+    color: black;
+    font-weight: bold;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease-in-out;
+}
+
+.list-card h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.list-card p {
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.list-card:hover {
+    transform: scale(1.05);
+}
+
+
+
+
+
