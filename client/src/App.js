@@ -10,7 +10,7 @@ import Learn from "./pages/Learn";
 
 function App() {
     return (
-        <BrowserRouter>
+        <BrowserRouter basename="/turboQuizz">
             <Routes>
                 <Route path="/" element={<Navigate to="/login" />} />
                 <Route path="/login" element={<Login />} />
