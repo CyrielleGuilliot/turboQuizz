@@ -85,9 +85,10 @@
     transition: transform 0.6s ease-in-out;
 }
 
-.flip-card.flipped .flip-card-inner {
+.flip-card-inner.flipped {
     transform: rotateY(180deg);
 }
+
 
 .flip-card-front,
 .flip-card-back {

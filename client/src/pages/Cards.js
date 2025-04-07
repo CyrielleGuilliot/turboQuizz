@@ -82,8 +82,8 @@ const Cards = () => {
             </div>
 
             <div className="single-card-wrapper" onClick={() => handleFlip(currentIndex)}>
-                <div className={`flip-card ${isFlipped ? "flipped" : ""}`}>
-                    <div className="flip-card-inner">
+                <div className="flip-card">
+                    <div className={`flip-card-inner ${isFlipped ? "flipped" : ""}`}>
                         {/* Face avant : Terme */}
                         <div className="flip-card-front">
                             <div className="custom-card">
