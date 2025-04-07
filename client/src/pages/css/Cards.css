@@ -21,7 +21,7 @@
     cursor: pointer;
 }
 
-/* Compteur central */
+/* Compteur de progression */
 .progress-counter {
     position: absolute;
     top: 20px;
@@ -29,7 +29,6 @@
 }
 
 /* Scores */
-/* Container des scores */
 .score-container {
     position: absolute;
     top: 60px;
@@ -39,7 +38,6 @@
     padding: 0 40px;
 }
 
-/* Styles des cercles */
 .score-circle {
     width: 50px;
     height: 50px;
@@ -50,7 +48,6 @@
     border-radius: 50%;
     font-size: 24px;
     font-weight: bold;
-    background-color: white;
     color: white;
 }
 
@@ -62,6 +59,7 @@
     background-color: limegreen;
 }
 
+/* Flip Card */
 .flip-card {
     width: 90vw;
     max-width: 450px;
@@ -87,7 +85,7 @@
     transition: transform 0.6s;
 }
 
-.flip-card.flipped .flip-card-inner {
+.flip-card-inner.flipped {
     transform: rotateY(180deg);
 }
 
@@ -100,29 +98,33 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: white;
-    color: black;
     border-radius: 10px;
-}
-
-.flip-card-back {
-    transform: rotateY(180deg);
-    background-color: #4e4e4e;
-
+    padding: 20px;
+    box-sizing: border-box;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
 }
 
 .flip-card-front {
     background-color: #304b85;
+    color: white;
 }
 
-.card-content{
+.flip-card-back {
+    background-color: #4e4e4e;
+    color: white;
+    transform: rotateY(180deg);
+}
+
+.card-content {
     font-size: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-/* Boutons de validation */
+/* Boutons de réponse */
 .button2-group {
     display: flex;
     flex-direction: row;
@@ -130,7 +132,8 @@
     margin-top: 20px;
 }
 
-.incorrect-button, .correct-button {
+.incorrect-button,
+.correct-button {
     font-size: 24px;
     padding: 10px;
     border: none;

@@ -31,6 +31,7 @@ const Cards = () => {
 
     // retourner la carte
     const handleFlip = () => {
+        console.log("Flipped!", !flipped);
         setFlipped(!flipped);
     };
 
@@ -50,6 +51,9 @@ const Cards = () => {
             }
         }
     };
+
+    console.log("flipped state:", flipped);
+    console.log("flip-card class:", `flip-card ${flipped ? "flipped" : ""}`);
 
     return (
         <div className="card-container">
@@ -73,8 +77,8 @@ const Cards = () => {
                 </div>
             </div>
 
-            <div className={`flip-card ${flipped ? "flipped" : ""}`} onClick={handleFlip}>
-                <div className="flip-card-inner">
+            <div className="flip-card" onClick={handleFlip}>
+                <div className={`flip-card-inner ${flipped ? "flipped" : ""}`}>
                     {/* Face avant */}
                     <div className="flip-card-front">
                         <div className="card-content">{words[currentIndex].term}</div>
