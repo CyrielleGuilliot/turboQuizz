@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/turboQuizz/static/css/main.19be58b2.chunk.css",
-    "main.js": "/turboQuizz/static/js/main.e92e9154.chunk.js",
-    "main.js.map": "/turboQuizz/static/js/main.e92e9154.chunk.js.map",
+    "main.css": "/turboQuizz/static/css/main.cbda9289.chunk.css",
+    "main.js": "/turboQuizz/static/js/main.40cc0a32.chunk.js",
+    "main.js.map": "/turboQuizz/static/js/main.40cc0a32.chunk.js.map",
     "runtime-main.js": "/turboQuizz/static/js/runtime-main.f7943148.js",
     "runtime-main.js.map": "/turboQuizz/static/js/runtime-main.f7943148.js.map",
     "static/css/2.88761f2b.chunk.css": "/turboQuizz/static/css/2.88761f2b.chunk.css",
-    "static/js/2.ba031b9a.chunk.js": "/turboQuizz/static/js/2.ba031b9a.chunk.js",
-    "static/js/2.ba031b9a.chunk.js.map": "/turboQuizz/static/js/2.ba031b9a.chunk.js.map",
+    "static/js/2.85dfaed4.chunk.js": "/turboQuizz/static/js/2.85dfaed4.chunk.js",
+    "static/js/2.85dfaed4.chunk.js.map": "/turboQuizz/static/js/2.85dfaed4.chunk.js.map",
     "index.html": "/turboQuizz/index.html",
     "static/css/2.88761f2b.chunk.css.map": "/turboQuizz/static/css/2.88761f2b.chunk.css.map",
-    "static/css/main.19be58b2.chunk.css.map": "/turboQuizz/static/css/main.19be58b2.chunk.css.map",
-    "static/js/2.ba031b9a.chunk.js.LICENSE.txt": "/turboQuizz/static/js/2.ba031b9a.chunk.js.LICENSE.txt"
+    "static/css/main.cbda9289.chunk.css.map": "/turboQuizz/static/css/main.cbda9289.chunk.css.map",
+    "static/js/2.85dfaed4.chunk.js.LICENSE.txt": "/turboQuizz/static/js/2.85dfaed4.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.f7943148.js",
     "static/css/2.88761f2b.chunk.css",
-    "static/js/2.ba031b9a.chunk.js",
-    "static/css/main.19be58b2.chunk.css",
-    "static/js/main.e92e9154.chunk.js"
+    "static/js/2.85dfaed4.chunk.js",
+    "static/css/main.cbda9289.chunk.css",
+    "static/js/main.40cc0a32.chunk.js"
   ]
 }
