@@ -19,11 +19,14 @@ const Cards = () => {
         fetch(`https://turboquizz.onrender.com/api/users/${userId}/lists`)
             .then((response) => response.json())
             .then((data) => {
+                console.log("Données récupérées : ", data); // 👈 ajoute ça
                 const foundList = data.find((l) => l.id === parseInt(id));
+                console.log("Liste trouvée : ", foundList); // 👈 et ça aussi
                 setList(foundList);
             })
             .catch((error) => console.error("Erreur de chargement de la liste", error));
     }, [id]);
+
 
     const handleFlip = (index) => {
         setFlippedCards((prev) => ({
