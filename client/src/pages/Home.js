@@ -14,7 +14,7 @@ const Home = () => {
     });
 
     const navigate = useNavigate();
-    const { userId } = useParams(); // ⬅️ récupère depuis l'URL
+    const { userId } = useParams();
 
     useEffect(() => {
         fetch(`https://turboquizz.onrender.com/api/users/${userId}/lists`)
@@ -90,7 +90,7 @@ const Home = () => {
                         style={{ cursor: "pointer" }}
                     >
                         <h3>{list.title}</h3>
-                        <p>{list.words.length} termes</p>
+                        <p>{list.words.length} terms</p>
                     </div>
                 ))}
             </div>

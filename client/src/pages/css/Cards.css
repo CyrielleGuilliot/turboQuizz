@@ -107,6 +107,12 @@
 
 .flip-card-back {
     transform: rotateY(180deg);
+    background-color: #4e4e4e;
+
+}
+
+.flip-card-front {
+    background-color: #304b85;
 }
 
 .card-content{

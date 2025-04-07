@@ -10,7 +10,7 @@ const List = () => {
     const [flippedCards, setFlippedCards] = useState({});
 
     useEffect(() => {
-        const uid = userId || localStorage.getItem("userId"); // fallback si pas dans l'URL
+        const uid = userId || localStorage.getItem("userId");
         if (!uid) return;
 
         fetch(`https://turboquizz.onrender.com/api/users/${uid}/lists`)
@@ -31,7 +31,7 @@ const List = () => {
         }));
     };
 
-    if (!list) return <p>Chargement...</p>;
+    if (!list) return <p>Loading...</p>;
 
     return (
         <div className="list-container">

@@ -6,7 +6,6 @@ const Cards = () => {
     const { id } = useParams();
     const navigate = useNavigate();
 
-    // États
     const [list, setList] = useState(null);
     const [currentIndex, setCurrentIndex] = useState(0);
     const [flipped, setFlipped] = useState(false);
@@ -27,10 +26,10 @@ const Cards = () => {
             .catch((error) => console.error("Erreur de chargement de la liste", error));
     }, [id]);
 
-    if (!list) return <p>Chargement...</p>;
+    if (!list) return <p>Loading...</p>;
     const words = list.words;
 
-    // Fonction pour retourner la carte
+    // retourner la carte
     const handleFlip = () => {
         setFlipped(!flipped);
     };
@@ -52,10 +51,8 @@ const Cards = () => {
         }
     };
 
-
     return (
         <div className="card-container">
-            {/* Bouton de sortie */}
             <button
                 className="exit-button"
                 onClick={() => {
@@ -65,11 +62,8 @@ const Cards = () => {
                 <i className="bi bi-x-lg"></i>
             </button>
 
-
-            {/* Compteur de progression */}
             <div className="progress-counter">{currentIndex + 1}/{words.length}</div>
 
-            {/* Compteurs de réponses */}
             <div className="score-container">
                 <div className="score-circle incorrect-score">
                     <span>{incorrectCount}</span>
@@ -79,8 +73,6 @@ const Cards = () => {
                 </div>
             </div>
 
-
-            {/* Carte retournable */}
             <div className={`flip-card ${flipped ? "flipped" : ""}`} onClick={handleFlip}>
                 <div className="flip-card-inner">
                     {/* Face avant */}
@@ -94,7 +86,6 @@ const Cards = () => {
                 </div>
             </div>
 
-            {/* Boutons de validation */}
             <div className="button2-group">
                 <button className="incorrect-button" onClick={() => handleAnswer(false)}>
                     <i className="bi bi-x-lg"></i>

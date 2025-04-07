@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from "react";
 import {useParams, useNavigate} from "react-router-dom";
-import ProgressBar from "react-bootstrap/ProgressBar";
 import "./css/Learn.css";
 
 const Learn = () => {
@@ -20,7 +19,6 @@ const Learn = () => {
     const isWordMastered = (stats) => {
         return stats.qcmCorrect >= 2 && stats.inputCorrect >= 2;
     };
-
 
     useEffect(() => {
         const userId = localStorage.getItem("userId");
@@ -51,7 +49,6 @@ const Learn = () => {
         });
         setWordStats(stats);
     };
-
 
     const generateOptions = (word, words) => {
         if (!word || !words) return;
@@ -103,7 +100,6 @@ const Learn = () => {
             generateOptions(list.words[nextIndex], list.words);
         }
     };
-
 
     const handleQCMChoice = (selectedDef) => {
         if (!list) return;
@@ -182,18 +178,18 @@ const Learn = () => {
     };
 
     if (!list && !sessionComplete) {
-        return <p>Chargement...</p>;
+        return <p>Loading...</p>;
     }
 
     if (sessionComplete) {
         return (
             <div className="learn-container">
-                <h2>🎉 Félicitations !</h2>
-                <p>Tu as maîtrisé tous les mots de cette liste.</p>
+                <h2>🎉 Congrats !</h2>
+                <p>You've mastered all the words on this list.</p>
                 <button onClick={() => {
                     const userId = localStorage.getItem("userId");
                     navigate(`/user/${userId}/list/${id}`);}}>
-                    Retour à la liste
+                    Back to the list
                 </button>
             </div>
         );
@@ -236,7 +232,7 @@ const Learn = () => {
                                 </button>
                             ))
                         ) : (
-                            <p>Chargement des options...</p>
+                            <p>Loading of options...</p>
                         )}
                     </div>
                 ) : (

@@ -23,7 +23,7 @@ const Login = () => {
                 localStorage.setItem("userId", userId);
                 navigate(`/user/${userId}/home`);
             } else {
-                setError("Nom d'utilisateur ou mot de passe incorrect");
+                setError("Username or password incorrect");
             }
         } catch (err) {
             console.error("Erreur lors de la tentative de connexion :", err);
@@ -37,19 +37,19 @@ const Login = () => {
             <form onSubmit={handleLogin} className="login-form">
                 <input
                     type="text"
-                    placeholder="Nom d'utilisateur"
+                    placeholder="Username"
                     value={username}
                     onChange={(e) => setUsername(e.target.value)}
                     required
                 />
                 <input
                     type="password"
-                    placeholder="Mot de passe"
+                    placeholder="Password"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     required
                 />
-                <button type="submit">Se connecter</button>
+                <button type="submit">Log in</button>
                 {error && <p className="error-message">{error}</p>}
             </form>
         </div>
