@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
+import { Card } from 'react-bootstrap';
 import "./css/Cards.css";
 
 const Cards = () => {
@@ -8,16 +9,14 @@ const Cards = () => {
 
     const [list, setList] = useState(null);
     const [currentIndex, setCurrentIndex] = useState(0);
-    const [flipped, setFlipped] = useState(false);
+    const [flippedCards, setFlippedCards] = useState({});
     const [correctCount, setCorrectCount] = useState(0);
     const [incorrectCount, setIncorrectCount] = useState(0);
 
-    // Récupération des mots depuis l'API
     useEffect(() => {
         const userId = localStorage.getItem("userId");
 
         fetch(`https://turboquizz.onrender.com/api/users/${userId}/lists`)
-
             .then((response) => response.json())
             .then((data) => {
                 const foundList = data.find((l) => l.id === parseInt(id));
@@ -26,34 +25,31 @@ const Cards = () => {
             .catch((error) => console.error("Erreur de chargement de la liste", error));
     }, [id]);
 
-    if (!list) return <p>Loading...</p>;
-    const words = list.words;
-
-    // retourner la carte
-    const handleFlip = () => {
-        console.log("Flipped!", !flipped);
-        setFlipped(!flipped);
+    const handleFlip = (index) => {
+        setFlippedCards((prev) => ({
+            ...prev,
+            [index]: !prev[index],
+        }));
     };
 
-    // Fonction pour gérer la réponse (correcte ou incorrecte)
     const handleAnswer = (isCorrect) => {
-        if (currentIndex < words.length) {
-            if (isCorrect && correctCount < words.length) {
+        if (currentIndex < list.words.length) {
+            if (isCorrect && correctCount < list.words.length) {
                 setCorrectCount(correctCount + 1);
-            } else if (!isCorrect && incorrectCount < words.length) {
+            } else if (!isCorrect && incorrectCount < list.words.length) {
                 setIncorrectCount(incorrectCount + 1);
             }
 
-            // Passer à la carte suivante si on n'est pas à la dernière
-            if (currentIndex < words.length - 1) {
+            if (currentIndex < list.words.length - 1) {
                 setCurrentIndex(currentIndex + 1);
-                setFlipped(false);
             }
         }
     };
 
-    console.log("flipped state:", flipped);
-    console.log("flip-card class:", `flip-card ${flipped ? "flipped" : ""}`);
+    if (!list) return <p>Loading...</p>;
+
+    const word = list.words[currentIndex];
+    const isFlipped = flippedCards[currentIndex];
 
     return (
         <div className="card-container">
@@ -62,11 +58,14 @@ const Cards = () => {
                 onClick={() => {
                     const userId = localStorage.getItem("userId");
                     navigate(`/user/${userId}/list/${id}`);
-                }}>
+                }}
+            >
                 <i className="bi bi-x-lg"></i>
             </button>
 
-            <div className="progress-counter">{currentIndex + 1}/{words.length}</div>
+            <div className="progress-counter">
+                {currentIndex + 1}/{list.words.length}
+            </div>
 
             <div className="score-container">
                 <div className="score-circle incorrect-score">
@@ -77,15 +76,25 @@ const Cards = () => {
                 </div>
             </div>
 
-            <div className="flip-card" onClick={handleFlip}>
-                <div className={`flip-card-inner ${flipped ? "flipped" : ""}`}>
-                    {/* Face avant */}
+            <div className="carousel-item-content">
+                <div
+                    className={`flip-card ${isFlipped ? "flipped" : ""}`}
+                    onClick={() => handleFlip(currentIndex)}
+                >
                     <div className="flip-card-front">
-                        <div className="card-content">{words[currentIndex].term}</div>
+                        <Card className="custom-card">
+                            <Card.Body className="d-flex justify-content-center align-items-center">
+                                <h3 className="term-text">{word.term}</h3>
+                            </Card.Body>
+                        </Card>
                     </div>
-                    {/* Face arrière */}
+
                     <div className="flip-card-back">
-                        <div className="card-content">{words[currentIndex].definition}</div>
+                        <Card className="custom-card back">
+                            <Card.Body className="d-flex justify-content-center align-items-center">
+                                <p className="definition-text">{word.definition}</p>
+                            </Card.Body>
+                        </Card>
                     </div>
                 </div>
             </div>
