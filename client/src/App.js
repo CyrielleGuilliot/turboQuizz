@@ -1,7 +1,7 @@
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./App.css"
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import {HashRouter as Router, Routes, Route, BrowserRouter} from "react-router-dom";
 import Home from "./pages/Home";
 import List from "./pages/List";
 import Cards from "./pages/Cards";
@@ -10,7 +10,7 @@ import Learn from "./pages/Learn";
 
 function App() {
     return (
-        <BrowserRouter basename="/turboQuizz">
+        <HashRouter basename="/turboQuizz">
             <Routes>
                 <Route path="/" element={<Navigate to="/login" />} />
                 <Route path="/login" element={<Login />} />
@@ -20,7 +20,7 @@ function App() {
                 <Route path="/user/:userId/list/:id/learn" element={<Learn />} />
             </Routes>
 
-        </BrowserRouter>
+        </HashRouter>
     );
 }
 
