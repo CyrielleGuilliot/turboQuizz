@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { Card } from 'react-bootstrap';
+import {Card, Carousel} from 'react-bootstrap';
 import "./css/Cards.css";
 
 const Cards = () => {
@@ -76,28 +76,32 @@ const Cards = () => {
                 </div>
             </div>
 
-            <div className="carousel-item-content">
-                <div className="flip-card" onClick={() => handleFlip(currentIndex)}>
-                    <div className={`flip-card-inner ${isFlipped ? "flipped" : ""}`}>
-                        <div className="flip-card-front">
-                            <Card className="custom-card">
-                                <Card.Body className="d-flex justify-content-center align-items-center">
-                                    <h3 className="term-text">{word.term}</h3>
-                                </Card.Body>
-                            </Card>
-                        </div>
+            <Carousel>
+                {list.words.map((word, index) => (
+                    <Carousel.Item key={index}>
+                        <div className="carousel-item-content">
+                            <div className={`flip-card ${flippedCards[index] ? "flipped" : ""}`}
+                                 onClick={() => handleFlip(index)}>
+                                <div className="flip-card-front">
+                                    <Card className="custom-card">
+                                        <Card.Body className="d-flex justify-content-center align-items-center">
+                                            <h3 className="term-text">{word.term}</h3>
+                                        </Card.Body>
+                                    </Card>
+                                </div>
 
-                        <div className="flip-card-back">
-                            <Card className="custom-card back">
-                                <Card.Body className="d-flex justify-content-center align-items-center">
-                                    <p className="definition-text">{word.definition}</p>
-                                </Card.Body>
-                            </Card>
+                                <div className="flip-card-back">
+                                    <Card className="custom-card back">
+                                        <Card.Body className="d-flex justify-content-center align-items-center">
+                                            <p className="definition-text">{word.definition}</p>
+                                        </Card.Body>
+                                    </Card>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-
+                    </Carousel.Item>
+                ))}
+            </Carousel>
 
             <div className="button2-group">
                 <button className="incorrect-button" onClick={() => handleAnswer(false)}>
