@@ -43,10 +43,8 @@ const List = () => {
                 {list.words.map((word, index) => (
                     <Carousel.Item key={index}>
                         <div className="carousel-item-content">
-                            <div
-                                className={`flip-card ${flippedCards[index] ? "flipped" : ""}`}
-                                onClick={() => handleFlip(index)}
-                            >
+                            <div className={`flip-card ${flippedCards[index] ? "flipped" : ""}`}
+                                onClick={() => handleFlip(index)}>
                                 <div className="flip-card-front">
                                     <Card className="custom-card">
                                         <Card.Body className="d-flex justify-content-center align-items-center">

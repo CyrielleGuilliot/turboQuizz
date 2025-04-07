@@ -98,6 +98,7 @@ const Cards = () => {
                 </div>
             </div>
 
+
             <div className="button2-group">
                 <button className="incorrect-button" onClick={() => handleAnswer(false)}>
                     <i className="bi bi-x-lg"></i>
