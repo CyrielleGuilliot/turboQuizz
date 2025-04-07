@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import React, {useEffect, useState} from "react";
+import {useParams, useNavigate} from "react-router-dom";
 import {Card, Carousel} from 'react-bootstrap';
 import "./css/Cards.css";
 
 const Cards = () => {
-    const { id } = useParams();
+    const {id} = useParams();
     const navigate = useNavigate();
 
     const [list, setList] = useState(null);
@@ -79,32 +79,29 @@ const Cards = () => {
                 </div>
             </div>
 
-            <Carousel>
-                {list.words.map((word, index) => (
-                    <Carousel.Item key={index}>
-                        <div className="carousel-item-content">
-                            <div className={`flip-card ${flippedCards[index] ? "flipped" : ""}`}
-                                 onClick={() => handleFlip(index)}>
-                                <div className="flip-card-front">
-                                    <Card className="custom-card">
-                                        <Card.Body className="d-flex justify-content-center align-items-center">
-                                            <h3 className="term-text">{word.term}</h3>
-                                        </Card.Body>
-                                    </Card>
-                                </div>
-
-                                <div className="flip-card-back">
-                                    <Card className="custom-card back">
-                                        <Card.Body className="d-flex justify-content-center align-items-center">
-                                            <p className="definition-text">{word.definition}</p>
-                                        </Card.Body>
-                                    </Card>
-                                </div>
-                            </div>
+            <div className="single-card-wrapper">
+                <div
+                    className={`flip-card ${isFlipped ? "flipped" : ""}`}
+                    onClick={() => handleFlip(currentIndex)}
+                >
+                    <div className="flip-card-inner">
+                        <div className="flip-card-front">
+                            <Card className="custom-card">
+                                <Card.Body className="d-flex justify-content-center align-items-center">
+                                    <h3 className="term-text">{word.term}</h3>
+                                </Card.Body>
+                            </Card>
                         </div>
-                    </Carousel.Item>
-                ))}
-            </Carousel>
+                        <div className="flip-card-back">
+                            <Card className="custom-card back">
+                                <Card.Body className="d-flex justify-content-center align-items-center">
+                                    <p className="definition-text">{word.definition}</p>
+                                </Card.Body>
+                            </Card>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             <div className="button2-group">
                 <button className="incorrect-button" onClick={() => handleAnswer(false)}>
@@ -116,6 +113,6 @@ const Cards = () => {
             </div>
         </div>
     );
-};
+}
 
 export default Cards;

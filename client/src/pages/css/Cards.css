@@ -29,7 +29,6 @@
 }
 
 /* Scores */
-/* Container des scores */
 .score-container {
     position: absolute;
     top: 60px;
@@ -39,7 +38,6 @@
     padding: 0 40px;
 }
 
-/* Styles des cercles */
 .score-circle {
     width: 50px;
     height: 50px;
@@ -62,73 +60,54 @@
     background-color: limegreen;
 }
 
-.carousel-item {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 400px; /* ajuste si besoin */
-}
-
-
-.carousel-item-content {
+/* Flip Card Structure */
+.single-card-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 350px;
+    width: 100%;
 }
 
-/* Effet de carte retournable */
 .flip-card {
-    position: relative;
     width: 100%;
     max-width: 500px;
     height: 250px;
-    perspective: 1000px; /* Effet de profondeur */
+    perspective: 1000px;
     cursor: pointer;
 }
 
-.flip-card div {
-    position: absolute;
+.flip-card-inner {
+    position: relative;
     width: 100%;
     height: 100%;
-    backface-visibility: hidden; /* Cache la face arrière par défaut */
+    transform-style: preserve-3d;
     transition: transform 0.6s ease-in-out;
 }
 
-/* Face avant */
+.flip-card.flipped .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
 .flip-card-front {
     transform: rotateY(0deg);
 }
 
-/* Face arrière */
 .flip-card-back {
     transform: rotateY(180deg);
 }
 
-/* Effet de retournement au clic */
-.flipped .flip-card-front {
-    transform: rotateY(180deg);
-}
-
-.flipped .flip-card-back {
-    transform: rotateY(0deg);
-}
-
-/* Styles des cartes */
-.custom-card {
-    background-color: white;
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* Carte arrière (définition) */
-.custom-card.back {
-    background-color: #f8f9fa; /* Légèrement gris */
-}
-
+/* Carte */
 .custom-card {
     height: 250px;
     width: 100%;
@@ -136,6 +115,14 @@
     background-color: white;
     border-radius: 15px;
     margin: 0 auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.custom-card.back {
+    background-color: #f8f9fa; /* Légèrement gris */
 }
 
 .term-text {
@@ -145,7 +132,6 @@
     color: #333;
 }
 
-/* Texte de la définition */
 .definition-text {
     font-size: 18px;
     font-style: italic;
@@ -162,7 +148,8 @@
     margin-top: 20px;
 }
 
-.incorrect-button, .correct-button {
+.incorrect-button,
+.correct-button {
     font-size: 24px;
     padding: 10px;
     border: none;
