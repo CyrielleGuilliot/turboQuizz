@@ -54,6 +54,8 @@ const Cards = () => {
     const word = list.words[currentIndex];
     const isFlipped = flippedCards[currentIndex];
 
+    console.log("Définition : ", word.definition);
+
     return (
         <div className="card-container">
             <button
@@ -79,25 +81,21 @@ const Cards = () => {
                 </div>
             </div>
 
-            <div className="single-card-wrapper">
-                <div
-                    className={`flip-card ${isFlipped ? "flipped" : ""}`}
-                    onClick={() => handleFlip(currentIndex)}
-                >
+            <div className="single-card-wrapper" onClick={() => handleFlip(currentIndex)}>
+                <div className={`flip-card ${isFlipped ? "flipped" : ""}`}>
                     <div className="flip-card-inner">
+                        {/* Face avant : Terme */}
                         <div className="flip-card-front">
-                            <Card className="custom-card">
-                                <Card.Body className="d-flex justify-content-center align-items-center">
-                                    <h3 className="term-text">{word.term}</h3>
-                                </Card.Body>
-                            </Card>
+                            <div className="custom-card">
+                                <h3 className="term-text">{word.term}</h3>
+                            </div>
                         </div>
+
+                        {/* Face arrière : Définition */}
                         <div className="flip-card-back">
-                            <Card className="custom-card back">
-                                <Card.Body className="d-flex justify-content-center align-items-center">
-                                    <p className="definition-text">{word.definition}</p>
-                                </Card.Body>
-                            </Card>
+                            <div className="custom-card back">
+                                <p className="definition-text">{word.definition}</p>
+                            </div>
                         </div>
                     </div>
                 </div>
