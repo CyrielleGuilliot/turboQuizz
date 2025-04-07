@@ -17,7 +17,7 @@ const Home = () => {
     const { userId } = useParams(); // ⬅️ récupère depuis l'URL
 
     useEffect(() => {
-        fetch(`http://localhost:5000/api/users/${userId}/lists`)
+        fetch(`https://turboquizz.onrender.com/api/users/${userId}/lists`)
             .then((response) => response.json())
             .then((data) => setLists(data))
             .catch((error) => console.error("Erreur lors du chargement des listes", error));
@@ -52,7 +52,7 @@ const Home = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        fetch(`http://localhost:5000/api/users/${userId}/lists`, {
+        fetch(`https://turboquizz.onrender.com/api/users/${userId}/lists`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(newList),

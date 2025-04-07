@@ -13,7 +13,7 @@ const List = () => {
         const uid = userId || localStorage.getItem("userId"); // fallback si pas dans l'URL
         if (!uid) return;
 
-        fetch(`http://localhost:5000/api/users/${uid}/lists`)
+        fetch(`https://turboquizz.onrender.com/api/users/${uid}/lists`)
             .then((response) => response.json())
             .then((data) => {
                 const foundList = data.find((l) => l.id === parseInt(id));

@@ -25,7 +25,7 @@ const Learn = () => {
     useEffect(() => {
         const userId = localStorage.getItem("userId");
 
-        fetch(`http://localhost:5000/api/users/${userId}/lists`)
+        fetch(`https://turboquizz.onrender.com/api/users/${userId}/lists`)
             .then(response => response.json())
             .then(data => {
                 const selectedList = data.find(l => l.id === parseInt(id));
