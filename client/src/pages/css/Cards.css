@@ -62,6 +62,13 @@
     background-color: limegreen;
 }
 
+.carousel-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 400px; /* ajuste si besoin */
+}
+
 
 .carousel-item-content {
     display: flex;
