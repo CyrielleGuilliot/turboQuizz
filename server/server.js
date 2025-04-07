@@ -59,6 +59,5 @@ app.post("/api/users/:userId/lists", (req, res) => {
     res.status(201).json(listToAdd);
 });
 
-app.listen(PORT, () => {
-    console.log(`✅ Serveur démarré sur http://localhost:${PORT}`);
-});
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
