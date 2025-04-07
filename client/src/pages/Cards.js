@@ -77,24 +77,23 @@ const Cards = () => {
             </div>
 
             <div className="carousel-item-content">
-                <div
-                    className={`flip-card ${isFlipped ? "flipped" : ""}`}
-                    onClick={() => handleFlip(currentIndex)}
-                >
-                    <div className="flip-card-front">
-                        <Card className="custom-card">
-                            <Card.Body className="d-flex justify-content-center align-items-center">
-                                <h3 className="term-text">{word.term}</h3>
-                            </Card.Body>
-                        </Card>
-                    </div>
+                <div className="flip-card" onClick={() => handleFlip(currentIndex)}>
+                    <div className={`flip-card-inner ${isFlipped ? "flipped" : ""}`}>
+                        <div className="flip-card-front">
+                            <Card className="custom-card">
+                                <Card.Body className="d-flex justify-content-center align-items-center">
+                                    <h3 className="term-text">{word.term}</h3>
+                                </Card.Body>
+                            </Card>
+                        </div>
 
-                    <div className="flip-card-back">
-                        <Card className="custom-card back">
-                            <Card.Body className="d-flex justify-content-center align-items-center">
-                                <p className="definition-text">{word.definition}</p>
-                            </Card.Body>
-                        </Card>
+                        <div className="flip-card-back">
+                            <Card className="custom-card back">
+                                <Card.Body className="d-flex justify-content-center align-items-center">
+                                    <p className="definition-text">{word.definition}</p>
+                                </Card.Body>
+                            </Card>
+                        </div>
                     </div>
                 </div>
             </div>
