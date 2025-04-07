@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/turboQuizz/static/css/main.b3ccd9cc.chunk.css",
-    "main.js": "/turboQuizz/static/js/main.36517859.chunk.js",
-    "main.js.map": "/turboQuizz/static/js/main.36517859.chunk.js.map",
+    "main.css": "/turboQuizz/static/css/main.fc5ddf3e.chunk.css",
+    "main.js": "/turboQuizz/static/js/main.9b0ded63.chunk.js",
+    "main.js.map": "/turboQuizz/static/js/main.9b0ded63.chunk.js.map",
     "runtime-main.js": "/turboQuizz/static/js/runtime-main.f7943148.js",
     "runtime-main.js.map": "/turboQuizz/static/js/runtime-main.f7943148.js.map",
     "static/css/2.88761f2b.chunk.css": "/turboQuizz/static/css/2.88761f2b.chunk.css",
@@ -10,14 +10,14 @@
     "static/js/2.6ce47d8b.chunk.js.map": "/turboQuizz/static/js/2.6ce47d8b.chunk.js.map",
     "index.html": "/turboQuizz/index.html",
     "static/css/2.88761f2b.chunk.css.map": "/turboQuizz/static/css/2.88761f2b.chunk.css.map",
-    "static/css/main.b3ccd9cc.chunk.css.map": "/turboQuizz/static/css/main.b3ccd9cc.chunk.css.map",
+    "static/css/main.fc5ddf3e.chunk.css.map": "/turboQuizz/static/css/main.fc5ddf3e.chunk.css.map",
     "static/js/2.6ce47d8b.chunk.js.LICENSE.txt": "/turboQuizz/static/js/2.6ce47d8b.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.f7943148.js",
     "static/css/2.88761f2b.chunk.css",
     "static/js/2.6ce47d8b.chunk.js",
-    "static/css/main.b3ccd9cc.chunk.css",
-    "static/js/main.36517859.chunk.js"
+    "static/css/main.fc5ddf3e.chunk.css",
+    "static/js/main.9b0ded63.chunk.js"
   ]
 }
